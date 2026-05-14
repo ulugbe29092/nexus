@@ -1,0 +1,23 @@
+{
+  "name": "nexus-erp-crm-hr-ai-platform",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Enterprise modular ERP + CRM + HR + AI platform built with Node.js, Next.js and NestJS.",
+  "packageManager": "npm@10.8.2",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=@nexus/web",
+    "dev:api": "npm run start:dev --workspace=@nexus/api",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3"
+  }
+}
