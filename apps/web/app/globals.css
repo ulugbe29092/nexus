@@ -68,11 +68,30 @@ select {
   animation-delay: -3s;
 }
 
+.scanline {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, transparent, rgba(15, 23, 42, 0.04), transparent);
+  background-size: 100% 180px;
+  animation: scan 7s linear infinite;
+}
+
 @keyframes drift {
   from {
     transform: translate3d(0, 0, 0) scale(1);
   }
   to {
     transform: translate3d(18px, -22px, 0) scale(1.08);
+  }
+}
+
+@keyframes scan {
+  from {
+    background-position: 0 -180px;
+  }
+  to {
+    background-position: 0 180px;
   }
 }
