@@ -13,6 +13,7 @@ import { NotificationsModule } from "./modules/notifications/notifications.modul
 import { RecruitmentModule } from "./modules/recruitment/recruitment.module";
 import { SalesModule } from "./modules/sales/sales.module";
 import { TasksModule } from "./modules/tasks/tasks.module";
+import { AppController } from "./app.controller";
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { TasksModule } from "./modules/tasks/tasks.module";
     NotificationsModule,
     AiModule,
     AnalyticsModule
-  ]
+  ],
+  controllers: [AppController]
 })
 export class AppModule {}

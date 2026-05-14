@@ -41,3 +41,38 @@ select {
   background-size: 30px 30px;
 }
 
+.ambient {
+  pointer-events: none;
+  position: fixed;
+  z-index: 0;
+  border-radius: 999px;
+  filter: blur(18px);
+  opacity: 0.28;
+  animation: drift 9s ease-in-out infinite alternate;
+}
+
+.ambient-one {
+  left: 8%;
+  top: 6%;
+  width: 260px;
+  height: 260px;
+  background: linear-gradient(135deg, #14b8a6, #2563eb);
+}
+
+.ambient-two {
+  right: 8%;
+  bottom: 10%;
+  width: 320px;
+  height: 320px;
+  background: linear-gradient(135deg, #f97364, #22c55e);
+  animation-delay: -3s;
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(18px, -22px, 0) scale(1.08);
+  }
+}

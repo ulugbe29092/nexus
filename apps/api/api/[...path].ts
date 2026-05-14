@@ -9,10 +9,10 @@ const json = (response: VercelResponse, data: unknown, status = 200) => {
 
 const dashboard = {
   metrics: [
-    { label: "Revenue", value: "$2.48M", delta: "+18.4%", tone: "green" },
-    { label: "Active clients", value: "1,284", delta: "+9.2%", tone: "blue" },
-    { label: "Attendance", value: "96.7%", delta: "+3.1%", tone: "green" },
-    { label: "AI savings", value: "412h", delta: "+27%", tone: "rose" }
+    { label: "Daromad", value: "$2.48M", delta: "+18.4%", tone: "green" },
+    { label: "Faol mijozlar", value: "1,284", delta: "+9.2%", tone: "blue" },
+    { label: "Davomat", value: "96.7%", delta: "+3.1%", tone: "green" },
+    { label: "AI tejamkorlik", value: "412 soat", delta: "+27%", tone: "rose" }
   ],
   realtime: [
     { label: "sales", value: 82 },
@@ -81,12 +81,66 @@ const aiInsights = [
   }
 ];
 
+const sales = [
+  {
+    id: "sale_001",
+    clientId: "cli_001",
+    amount: 185000,
+    pipelineStatus: "negotiation",
+    createdAt: new Date().toISOString()
+  }
+];
+
+const inventory = [
+  { sku: "NX-LAP-001", name: "Engineering laptops", warehouse: "Tashkent A", quantity: 84, status: "healthy" },
+  { sku: "NX-BRC-044", name: "Barcode scanners", warehouse: "Tashkent B", quantity: 18, status: "low" },
+  { sku: "NX-SRV-010", name: "Server parts", warehouse: "Samarkand", quantity: 32, status: "healthy" }
+];
+
+const recruitment = [
+  { vacancy: "Senior NestJS Engineer", candidates: 48, aiShortlisted: 9, interviews: 4 },
+  { vacancy: "Enterprise Sales Lead", candidates: 33, aiShortlisted: 7, interviews: 3 },
+  { vacancy: "HR Operations Manager", candidates: 21, aiShortlisted: 5, interviews: 2 }
+];
+
+const tasks = {
+  todo: ["Payroll approval tayyorlash", "Client search indexing"],
+  progress: ["Recruitment AI scoring", "Inventory barcode workflow"],
+  done: ["Executive KPI dashboard", "RBAC role contract"]
+};
+
+const notifications = [
+  { channel: "telegram", title: "Finance approval kerak", priority: "high" },
+  { channel: "email", title: "Candidate interview belgilandi", priority: "medium" },
+  { channel: "push", title: "Sales forecast AI tomonidan yangilandi", priority: "medium" }
+];
+
 export default function handler(request: VercelRequest, response: VercelResponse) {
   if (request.method === "OPTIONS") {
     return json(response, {});
   }
 
   const path = request.url?.split("?")[0] ?? "/";
+
+  if (path === "/" || path === "/api") {
+    return json(response, {
+      status: "ok",
+      message: "NEXUS ERP CRM HR AI backend ishlayapti",
+      routes: [
+        "/api/health",
+        "/api/analytics/dashboard",
+        "/api/employees",
+        "/api/clients",
+        "/api/sales",
+        "/api/ai/insights",
+        "/api/finance/summary",
+        "/api/inventory/stock",
+        "/api/recruitment/pipeline",
+        "/api/tasks/kanban",
+        "/api/notifications"
+      ]
+    });
+  }
 
   if (path === "/api/health") {
     return json(response, { status: "ok", service: "nexus-api" });
@@ -104,6 +158,10 @@ export default function handler(request: VercelRequest, response: VercelResponse
     return json(response, clients);
   }
 
+  if (path === "/api/sales") {
+    return json(response, sales);
+  }
+
   if (path === "/api/ai/insights") {
     return json(response, aiInsights);
   }
@@ -118,6 +176,22 @@ export default function handler(request: VercelRequest, response: VercelResponse
     });
   }
 
+  if (path === "/api/inventory/stock") {
+    return json(response, inventory);
+  }
+
+  if (path === "/api/recruitment/pipeline") {
+    return json(response, recruitment);
+  }
+
+  if (path === "/api/tasks/kanban") {
+    return json(response, tasks);
+  }
+
+  if (path === "/api/notifications") {
+    return json(response, notifications);
+  }
+
   return json(
     response,
     {
@@ -127,11 +201,15 @@ export default function handler(request: VercelRequest, response: VercelResponse
         "/api/analytics/dashboard",
         "/api/employees",
         "/api/clients",
+        "/api/sales",
         "/api/ai/insights",
-        "/api/finance/summary"
+        "/api/finance/summary",
+        "/api/inventory/stock",
+        "/api/recruitment/pipeline",
+        "/api/tasks/kanban",
+        "/api/notifications"
       ]
     },
     200
   );
 }
-
