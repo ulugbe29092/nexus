@@ -38,7 +38,7 @@ const nav = [
   { id: "erp", label: "ERP", icon: Factory },
   { id: "crm", label: "CRM", icon: ContactRound },
   { id: "hrm", label: "HRM", icon: UsersRound },
-  { id: "recruitment", label: "Recruitment", icon: BriefcaseBusiness },
+  { id: "recruitment", label: "Ishga qabul", icon: BriefcaseBusiness },
   { id: "finance", label: "Moliya", icon: CircleDollarSign },
   { id: "inventory", label: "Ombor", icon: Warehouse },
   { id: "analytics", label: "Analitika", icon: BarChart3 },
@@ -54,7 +54,7 @@ const moduleContent: Record<SectionId, { title: string; subtitle: string; cards:
     subtitle: "ERP, CRM, HRM, AI va analitika bitta operatsion markazda ishlaydi.",
     cards: [
       ["Bugungi savdo", "$184K", "AI prognoz +14% o'sish ko'rsatmoqda"],
-      ["Jarayondagi tasklar", "127", "23 tasi approval chain kutmoqda"],
+      ["Jarayondagi vazifalar", "127", "23 tasi tasdiq jarayonida"],
       ["Realtime signal", "98%", "Barcha asosiy servislar faol"]
     ]
   },
@@ -62,17 +62,17 @@ const moduleContent: Record<SectionId, { title: string; subtitle: string; cards:
     title: "ERP korxona boshqaruvi",
     subtitle: "Procurement, reporting, invoice va biznes jarayonlari nazoratda.",
     cards: [
-      ["Purchase requests", "34", "9 tasi CEO tasdig'ida"],
-      ["Invoice nazorati", "$286K", "Soliq rezervi avtomatik hisoblandi"],
+      ["Xarid so'rovlari", "34", "9 tasi rahbar tasdig'ida"],
+      ["Hisob-faktura nazorati", "$286K", "Soliq rezervi avtomatik hisoblandi"],
       ["Hisobotlar", "PDF / Excel", "Eksport moduli tayyor"]
     ]
   },
   crm: {
     title: "CRM mijozlar tizimi",
-    subtitle: "Lead, contact, negotiation, won/lost pipeline boshqaruvi.",
+    subtitle: "Lid, aloqa, muzokara, yutildi/yutqazildi pipeline boshqaruvi.",
     cards: [
-      ["Leadlar", "42", "18 tasi yuqori ehtimolli"],
-      ["Muzokara", "24", "4 ta enterprise deal CEO yordamida"],
+      ["Lidlar", "42", "18 tasi yuqori ehtimolli"],
+      ["Muzokara", "24", "4 ta yirik kelishuv rahbar yordamida"],
       ["Kommunikatsiya", "4 kanal", "Email, SMS, Telegram, WhatsApp"]
     ]
   },
@@ -86,7 +86,7 @@ const moduleContent: Record<SectionId, { title: string; subtitle: string; cards:
     ]
   },
   recruitment: {
-    title: "Recruitment hiring pipeline",
+    title: "Ishga qabul qilish pipeline",
     subtitle: "Vakansiya, CV upload, AI resume analysis va interview scheduling.",
     cards: [
       ["Vakansiyalar", "8", "3 tasi senior pozitsiya"],
@@ -96,7 +96,7 @@ const moduleContent: Record<SectionId, { title: string; subtitle: string; cards:
   },
   finance: {
     title: "Moliya va accounting",
-    subtitle: "Income, expense, tax, approval va auditga tayyor hisoblar.",
+    subtitle: "Kirim, chiqim, soliq, tasdiq va auditga tayyor hisoblar.",
     cards: [
       ["Income", "$2.48M", "Oylik reja 118% bajarildi"],
       ["Expense", "$1.14M", "Vendor xarajatlari optimallashtirildi"],
@@ -107,7 +107,7 @@ const moduleContent: Record<SectionId, { title: string; subtitle: string; cards:
     title: "Ombor va inventory",
     subtitle: "Warehouse, stock, barcode va product movement kuzatuvi.",
     cards: [
-      ["Stock sog'lom", "84%", "18 ta barcode scanner low stock"],
+      ["Zaxira holati", "84%", "18 ta barcode scanner kam qolgan"],
       ["Warehouse", "3", "Tashkent A/B va Samarkand"],
       ["Movement", "312", "Bugungi kirim-chiqimlar"]
     ]
@@ -123,18 +123,18 @@ const moduleContent: Record<SectionId, { title: string; subtitle: string; cards:
   },
   ai: {
     title: "AI agentlar va automation",
-    subtitle: "HR, CRM, Finance va Analytics agentlari tavsiya va hisobot beradi.",
+    subtitle: "HR, CRM, Moliya va Analitika agentlari tavsiya va hisobot beradi.",
     cards: [
       ["HR Agent", "91%", "Davomat anomaly topildi"],
-      ["CRM Agent", "87%", "Enterprise deal acceleration"],
+      ["CRM Agent", "87%", "Yirik kelishuvlarni tezlashtirish"],
       ["Finance Agent", "84%", "Tax optimization tavsiyasi"]
     ]
   },
   security: {
-    title: "Enterprise xavfsizlik",
+    title: "Korporativ xavfsizlik",
     subtitle: "RBAC, audit log, session tracking, rate limit va login alert.",
     cards: [
-      ["RBAC", "8 rol", "Super Admin, CEO, HR va boshqalar"],
+      ["RBAC", "8 rol", "Super Admin, Rahbar, HR va boshqalar"],
       ["Audit log", "100%", "Har bir critical action saqlanadi"],
       ["Session", "Faol", "Device history va login alert"]
     ]
@@ -142,8 +142,8 @@ const moduleContent: Record<SectionId, { title: string; subtitle: string; cards:
 };
 
 const pipeline = [
-  { stage: "Lead", value: 42, color: "bg-blue-500" },
-  { stage: "Contact", value: 31, color: "bg-cyan-500" },
+  { stage: "Lid", value: 42, color: "bg-blue-500" },
+  { stage: "Aloqa", value: 31, color: "bg-cyan-500" },
   { stage: "Muzokara", value: 24, color: "bg-amber-500" },
   { stage: "Yutildi", value: 18, color: "bg-emerald-500" }
 ];
@@ -226,7 +226,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
           >
             <div>
-              <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Enterprise boshqaruv markazi</p>
+              <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Korporativ boshqaruv markazi</p>
               <h2 className="mt-1 text-2xl font-semibold tracking-normal text-slate-950 md:text-3xl">
                 Katta biznes uchun yagona AI platforma
               </h2>
@@ -237,7 +237,7 @@ export default function Home() {
                 <input
                   className="w-full bg-transparent text-sm outline-none"
                   onChange={(event) => setQuery(event.target.value)}
-                  placeholder="Global qidiruv"
+                  placeholder="Umumiy qidiruv"
                   value={query}
                 />
               </label>
@@ -249,7 +249,7 @@ export default function Home() {
                 <Bell size={18} />
               </button>
               <button className="flex h-11 items-center gap-2 rounded-md bg-slate-950 px-4 text-sm font-semibold text-white transition hover:-translate-y-0.5">
-                CEO ish maydoni
+                Rahbar ish maydoni
                 <ChevronDown size={16} />
               </button>
             </div>
@@ -342,7 +342,7 @@ export default function Home() {
                   <div key={item.stage}>
                     <div className="mb-2 flex justify-between text-sm">
                       <span className="font-medium text-slate-700">{item.stage}</span>
-                      <span className="text-slate-500">{item.value} deal</span>
+                      <span className="text-slate-500">{item.value} kelishuv</span>
                     </div>
                     <div className="h-3 overflow-hidden rounded-full bg-slate-200">
                       <motion.div
@@ -408,7 +408,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-3">
               <Workflow className="text-rose-600" size={20} />
-              <span className="text-sm font-medium">Workflow va automation tayyor</span>
+              <span className="text-sm font-medium">Ish jarayoni va avtomatlashtirish tayyor</span>
             </div>
           </footer>
         </section>

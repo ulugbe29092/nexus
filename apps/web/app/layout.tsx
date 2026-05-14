@@ -6,14 +6,13 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "NEXUS ERP CRM HR AI",
-  description: "Enterprise ERP, CRM, HR, Analytics and AI Automation platform"
+  description: "Katta bizneslar uchun ERP, CRM, HR, moliya, analitika va AI avtomatlashtirish platformasi"
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="uz">
       <body className={inter.className}>{children}</body>
     </html>
   );
 }
-

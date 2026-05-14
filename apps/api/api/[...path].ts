@@ -68,15 +68,15 @@ const aiInsights = [
   {
     id: "ai_001",
     module: "HR",
-    title: "Attendance anomaly",
-    recommendation: "Review shift planning for the logistics department before overtime grows.",
+    title: "Davomatdagi noodatiy holat",
+    recommendation: "Qo'shimcha ish vaqti oshishidan oldin logistika bo'limi smenasini qayta ko'rib chiqing.",
     confidence: 0.91
   },
   {
     id: "ai_002",
     module: "CRM",
-    title: "Enterprise deal acceleration",
-    recommendation: "Move high-health manufacturing leads to CEO-assisted negotiation.",
+    title: "Yirik kelishuvni tezlashtirish",
+    recommendation: "Yuqori ehtimolli ishlab chiqarish lidlarini rahbar ishtirokidagi muzokaraga o'tkazing.",
     confidence: 0.87
   }
 ];
@@ -92,25 +92,25 @@ const sales = [
 ];
 
 const inventory = [
-  { sku: "NX-LAP-001", name: "Engineering laptops", warehouse: "Tashkent A", quantity: 84, status: "healthy" },
-  { sku: "NX-BRC-044", name: "Barcode scanners", warehouse: "Tashkent B", quantity: 18, status: "low" },
-  { sku: "NX-SRV-010", name: "Server parts", warehouse: "Samarkand", quantity: 32, status: "healthy" }
+  { sku: "NX-LAP-001", name: "Muhandislar noutbuklari", warehouse: "Tashkent A", quantity: 84, status: "yaxshi" },
+  { sku: "NX-BRC-044", name: "Barcode skanerlar", warehouse: "Tashkent B", quantity: 18, status: "kam" },
+  { sku: "NX-SRV-010", name: "Server qismlari", warehouse: "Samarkand", quantity: 32, status: "yaxshi" }
 ];
 
 const recruitment = [
   { vacancy: "Senior NestJS Engineer", candidates: 48, aiShortlisted: 9, interviews: 4 },
-  { vacancy: "Enterprise Sales Lead", candidates: 33, aiShortlisted: 7, interviews: 3 },
+  { vacancy: "Korporativ savdo rahbari", candidates: 33, aiShortlisted: 7, interviews: 3 },
   { vacancy: "HR Operations Manager", candidates: 21, aiShortlisted: 5, interviews: 2 }
 ];
 
 const tasks = {
-  todo: ["Payroll approval tayyorlash", "Client search indexing"],
-  progress: ["Recruitment AI scoring", "Inventory barcode workflow"],
+  todo: ["Payroll tasdig'ini tayyorlash", "Mijoz qidiruv indeksini sozlash"],
+  progress: ["Ishga qabul AI scoring", "Ombor barcode jarayoni"],
   done: ["Executive KPI dashboard", "RBAC role contract"]
 };
 
 const notifications = [
-  { channel: "telegram", title: "Finance approval kerak", priority: "high" },
+  { channel: "telegram", title: "Moliya tasdig'i kerak", priority: "high" },
   { channel: "email", title: "Candidate interview belgilandi", priority: "medium" },
   { channel: "push", title: "Sales forecast AI tomonidan yangilandi", priority: "medium" }
 ];
