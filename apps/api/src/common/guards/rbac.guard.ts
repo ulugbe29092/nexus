@@ -1,6 +1,6 @@
 import { CanActivate, ExecutionContext, Injectable } from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
-import type { Role } from "@nexus/shared";
+import type { Role } from "../domain.types";
 import { ROLES_KEY } from "../decorators/roles.decorator";
 
 @Injectable()
@@ -21,4 +21,3 @@ export class RbacGuard implements CanActivate {
     return Boolean(request.user?.role && requiredRoles.includes(request.user.role));
   }
 }
-

@@ -13,10 +13,7 @@
     "incremental": true,
     "strict": true,
     "skipLibCheck": true,
-    "paths": {
-      "@nexus/shared": ["../../packages/shared/src/index.ts"]
-    }
+    "paths": {}
   },
   "include": ["src/**/*.ts"]
 }
-

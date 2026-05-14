@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import type { Client } from "@nexus/shared";
+import type { Client } from "../../common/domain.types";
 
 @Injectable()
 export class ClientsService {
@@ -26,4 +26,3 @@ export class ClientsService {
     return this.clients;
   }
 }
-

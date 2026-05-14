@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import type { KpiMetric } from "@nexus/shared";
+import type { KpiMetric } from "../../common/domain.types";
 
 @Injectable()
 export class AnalyticsService {

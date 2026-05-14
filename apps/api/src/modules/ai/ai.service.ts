@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import type { AiInsight } from "@nexus/shared";
+import type { AiInsight } from "../../common/domain.types";
 
 @Injectable()
 export class AiService {
@@ -29,4 +29,3 @@ export class AiService {
     ];
   }
 }
-
